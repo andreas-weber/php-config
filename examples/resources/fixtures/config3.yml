@@ -1,0 +1,4 @@
+version: %version%
+logging:
+  path: %basepath%/application.log
+  level: CRITICAL

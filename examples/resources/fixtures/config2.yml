@@ -1,0 +1,7 @@
+version: prod
+logging:
+  path: /var/log/application.log
+  level: CRITICAL
+user:
+  email: code@andreas-weber.me
+  password: another_password

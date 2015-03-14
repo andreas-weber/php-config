@@ -1,0 +1,3 @@
+version: prod
+user:
+  salt: 'this_is_a_prett_cool_application_salt2'

@@ -1,0 +1,6 @@
+version: dev
+logging:
+  path: /var/log/application.log
+user:
+  email: code@andreas-weber.me
+  password: some_password

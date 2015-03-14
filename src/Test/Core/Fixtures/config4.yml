@@ -1,0 +1,5 @@
+version: dev
+user:
+  salt: 'this_is_a_prett_cool_application_salt'
+logging:
+  logfile: %logpath%/application.log
