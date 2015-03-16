@@ -1,6 +1,6 @@
 # andreas-weber/php-config
 
-[![Build Status](https://travis-ci.org/andreas-weber/php-sms.svg?branch=master)](https://travis-ci.org/andreas-weber/php-sms)
+[![Build Status](https://travis-ci.org/andreas-weber/php-config.svg?branch=master)](https://travis-ci.org/andreas-weber/php-config)
 
 Config library for PHP 5.3+.
 
