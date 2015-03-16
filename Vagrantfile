@@ -25,11 +25,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     config.vm.define "core" do |core|
-        core.vm.host_name = "andreas-weber.php-sms.dev"
-        core.vm.network "private_network", ip: "192.168.56.101"
+        core.vm.host_name = "andreas-weber.php-config.dev"
+        core.vm.network "private_network", ip: "192.168.56.102"
 
         core.vm.provider :virtualbox do |virtualbox|
-            virtualbox.customize ["modifyvm", :id, "--name", "andreas-weber.php-sms.dev"]
+            virtualbox.customize ["modifyvm", :id, "--name", "andreas-weber.php-config.dev"]
         end
     end
 

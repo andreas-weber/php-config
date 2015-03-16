@@ -16,26 +16,6 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
      */
     private $config;
 
-    protected function setUp()
-    {
-        parent::setUp();
-
-        $this->configArray = array(
-            'something' => 'blabla',
-            'wicked' => array(
-                'really' => array(
-                    'this',
-                    'is',
-                    5
-                )
-            )
-        );
-
-        $this->config = new Config(
-            $this->configArray
-        );
-    }
-
     public function testConfigImplementsArrayAccessInterface()
     {
         $this->assertInstanceOf(
@@ -96,5 +76,86 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
         }
 
         $this->assertTrue($steppedIn);
+    }
+
+    public function testGetMethod()
+    {
+        $this->assertEquals(
+            'blabla',
+            $this->config->get('something')
+        );
+    }
+
+    public function testOffsetGet()
+    {
+        $this->assertEquals(
+            'blabla',
+            $this->config['something']
+        );
+    }
+
+    public function testOffsetSet()
+    {
+        $this->config['woooop'] = 'pow!';
+
+        $this->assertTrue(
+            isset($this->config['woooop'])
+        );
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Identifier "undefined" is not defined.
+     */
+    public function testOffsetGetThrowsExceptionWhenOffsetDoesNotExist()
+    {
+        $this->config['undefined'];
+    }
+
+    public function testOffsetUnset()
+    {
+        unset($this->config['something']);
+
+        $this->assertFalse(
+            isset($this->config['something'])
+        );
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Identifier "undefined" is not defined.
+     */
+    public function testOffsetUnsetThrowsExceptionWhenOffsetDoesNotExist()
+    {
+        unset($this->config['undefined']);
+    }
+
+    /**
+     * @expectedException \LogicException
+     * @expectedExceptionMessage Deep clone not implemented.
+     */
+    public function testCloningThrowsLogicException()
+    {
+        $clone = clone $this->config;
+    }
+
+    protected function setUp()
+    {
+        parent::setUp();
+
+        $this->configArray = array(
+            'something' => 'blabla',
+            'wicked' => array(
+                'really' => array(
+                    'this',
+                    'is',
+                    5
+                )
+            )
+        );
+
+        $this->config = new Config(
+            $this->configArray
+        );
     }
 }

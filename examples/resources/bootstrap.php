@@ -9,6 +9,6 @@
  * with this source code in the file LICENSE.
  */
 
-define('BASEPATH', __DIR__ . '/../../');
+define('BASEPATH', realpath(__DIR__ . '/../../'));
 
 require_once BASEPATH . '/vendor/autoload.php';

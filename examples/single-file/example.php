@@ -17,7 +17,7 @@ $configLoader = new ConfigLoader();
 
 $config = $configLoader->load(
     array(
-        BASEDIR . '/examples/resources/fixtures/config1.yml'
+        BASEPATH . '/examples/resources/fixtures/config1.yml'
     )
 );
 

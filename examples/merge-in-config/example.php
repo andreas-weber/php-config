@@ -17,7 +17,7 @@ $configLoader = new ConfigLoader();
 
 $config = $configLoader->load(
     array(
-        BASEDIR . '/examples/resources/fixtures/config1.yml'
+        BASEPATH . '/examples/resources/fixtures/config1.yml'
     )
 );
 
@@ -27,7 +27,7 @@ var_export(
 
 $configMerged = $configLoader->load(
     array(
-        BASEDIR . '/examples/resources/fixtures/config2.yml'
+        BASEPATH . '/examples/resources/fixtures/config2.yml'
     ),
     $config
 );

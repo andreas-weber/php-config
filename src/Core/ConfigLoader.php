@@ -58,7 +58,7 @@ class ConfigLoader
         }
 
         if (!$this->isValidFileList($files)) {
-            throw new \RuntimeException('Invalid config file list given. At least one config file to parse must exist.');
+            throw new \RuntimeException('Invalid config file list given. At least one config file must exist.');
         }
 
         foreach ($files as $file) {
@@ -70,18 +70,6 @@ class ConfigLoader
         }
 
         return $config;
-    }
-
-    /**
-     * Checks if a file exists.
-     *
-     * @param string $file File
-     *
-     * @return bool
-     */
-    private function isFileExisting($file)
-    {
-        return is_file($file);
     }
 
     /**
@@ -104,6 +92,18 @@ class ConfigLoader
         }
 
         return $valid;
+    }
+
+    /**
+     * Checks if a file exists.
+     *
+     * @param string $file File
+     *
+     * @return bool
+     */
+    private function isFileExisting($file)
+    {
+        return is_file($file);
     }
 
     /**

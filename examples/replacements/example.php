@@ -16,13 +16,13 @@ require_once __DIR__ . '/../resources/bootstrap.php';
 $configLoader = new ConfigLoader(
     array(
         'version' => '1.1.3',
-        'basepath' => BASEDIR
+        'basepath' => BASEPATH
     )
 );
 
 $config = $configLoader->load(
     array(
-        BASEDIR . '/examples/resources/fixtures/config3.yml'
+        BASEPATH . '/examples/resources/fixtures/config3.yml'
     )
 );
 

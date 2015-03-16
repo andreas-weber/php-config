@@ -1,6 +1,5 @@
 # andreas-weber/php-config
 
-TOOO: Change travis link
 [![Build Status](https://travis-ci.org/andreas-weber/php-sms.svg?branch=master)](https://travis-ci.org/andreas-weber/php-sms)
 
 Config library for PHP 5.3+.
@@ -43,6 +42,7 @@ Run tests:
 
 ```
 cd /vagrant
+composer install
 vendor/bin/phpunit src/Test/
 ```
 

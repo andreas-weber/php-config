@@ -2,6 +2,7 @@
 
 namespace AndreasWeber\Config\Test\Core;
 
+use AndreasWeber\Config\Core\Config;
 use AndreasWeber\Config\Core\ConfigLoader;
 
 class ConfigLoaderTest extends \PHPUnit_Framework_TestCase
@@ -162,7 +163,7 @@ class ConfigLoaderTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \RuntimeException
-     * @expectedExceptionMessage Invalid config file list given. At least one config file to parse must exist.
+     * @expectedExceptionMessage Invalid config file list given. At least one config file must exist.
      */
     public function testLoadMultipleNotExistentFilesThrowsException()
     {
