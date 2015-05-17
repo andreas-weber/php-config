@@ -1,7 +1,0 @@
-- Bring up vm
-- run tests
-- check coverage
-- add strict mode to throw exception when one file is not found
-- test all examples
-- test example links
-- read README.md and check if there are inconsistencies beetween other libraries

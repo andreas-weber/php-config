@@ -7,6 +7,7 @@ Config library for PHP 5.3+.
 ## Supported file formats
 
 - YAML
+- Array
 
 ## Requirements
 Check shipped composer.json.
@@ -21,6 +22,7 @@ Simply add a dependency on `andreas-weber/php-config` to your project's [Compose
 - [Load multiple files](examples/multiple-files/example.php)
 - [Replacements](examples/replacements/example.php)
 - [Merge in existing config](examples/merge-in-config/example.php)
+- [Load an array](examples/config-from-array/example.php)
 
 ## Developer
 

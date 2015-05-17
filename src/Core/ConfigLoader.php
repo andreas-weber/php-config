@@ -82,6 +82,31 @@ class ConfigLoader
     }
 
     /**
+     * Load a config array.
+     *
+     * @param array  $options
+     * @param Config $config When passed config instance is used to merge into
+     *
+     * @return Config
+     */
+    public function loadArray(array $options, Config $config = null)
+    {
+        Assertion::notEmpty($options);
+
+        if (is_null($config)) {
+            $config = new Config();
+        }
+
+        $options = $this->doReplacements($options);
+
+        $config->merge(
+            new Config($options)
+        );
+
+        return $config;
+    }
+
+    /**
      * Check if a valid file list is given.
      *
      * @param array $files

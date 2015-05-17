@@ -47,6 +47,52 @@ class ConfigLoaderTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    public function testLoadConfigFileFromArray()
+    {
+        $options = array(
+            'custom1' => array(
+                'hello',
+                'you'
+            ),
+            'custom2' => true
+        );
+
+        $config = $this->configLoader->loadArray($options);
+
+        $this->assertEquals(
+            $options,
+            $config->toArray()
+        );
+    }
+
+    public function testLoadConfigFileDoesReplacements()
+    {
+        $this->configLoader->setReplacements(
+            array(
+                'logPath' => '/some/path'
+            )
+        );
+
+        $config = $this->configLoader->loadArray(
+            array(
+                'custom1' => array(
+                    'logPath' => '%logPath%/logfile.txt'
+                ),
+                'custom2' => true
+            )
+        );
+
+        $this->assertEquals(
+            array(
+                'custom1' => array(
+                    'logPath' => '/some/path/logfile.txt'
+                ),
+                'custom2' => true
+            ),
+            $config->toArray()
+        );
+    }
+
     public function testLoadMultipleConfigFiles()
     {
         $config = $this->configLoader->load(
@@ -94,7 +140,7 @@ class ConfigLoaderTest extends \PHPUnit_Framework_TestCase
     {
         $this->configLoader->setReplacements(
             array(
-                'logpath' => '/some/path'
+                'logPath' => '/some/path'
             )
         );
 
